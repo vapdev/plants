@@ -1,5 +1,12 @@
-<img src="/assets/img/{{estagio}}.png">
-<p>Estágio atual da planta: {{estagio}}</p>
-<button (click)="regar()"> Regar </button>
+<button type="button" class="btn btn-primary" (click)="regar()"> Regar </button>
 <button type="button" class="btn btn-primary" (click)="colher()"> Colher </button>
+<button type="button" class="btn btn-primary" (click)="upColher()"> Upgrade Colheita </button>
+<button type="button" class="btn btn-primary" (click)="upJuros()"> Upgrade Juros </button>
+<br>
+<br>
 <p>Dinheiro: {{ dinheiro }}</p>
+<p>Ganho por colheita: {{fator_colheita}}</p>
+<p>Ganho por segundo: {{ganho_ps}}</p>
+<p>Upgrade da colheita: {{valor_upcolher}}</p>
+<p>Upgrade do juros: {{valor_upjuros}}</p>
+<img src="/assets/img/{{estagio}}.png">

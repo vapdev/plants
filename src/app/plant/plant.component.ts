@@ -9,7 +9,7 @@ import { interval } from 'rxjs';
 })
 export class PlantComponent implements OnInit {
 
-  dinheiro: number = 5000000000;
+  dinheiro: number = 0;
   estagio: number = 0;
   teste: number = 0;
   fator_colheita: number = 10;
@@ -37,14 +37,14 @@ export class PlantComponent implements OnInit {
 
   colher() {
     if (this.estagio == 5) {
-      this.estagio = 0;
       this.dinheiro += this.fator_colheita;
+      this.estagio = 0;
     }
   }
 
   upColher(){
     if (this.dinheiro > this.valor_upcolher){
-      this.fator_colheita = this.fator_colheita*2;
+      this.fator_colheita = this.fator_colheita*1.8;
       this.dinheiro -= this.valor_upcolher;
       this.valor_upcolher = this.valor_upcolher * 2,5;
     }
@@ -52,7 +52,7 @@ export class PlantComponent implements OnInit {
 
   upJuros(){
     if (this.dinheiro > this.valor_upjuros ){
-      this.ms = this.ms/1.6;
+      this.ms = this.ms/1.85;
       this.dinheiro -= this.valor_upjuros;
       this.valor_upjuros = this.valor_upjuros * 2,5;
       this.ganho_ps = 1000/this.ms;  

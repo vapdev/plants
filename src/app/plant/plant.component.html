@@ -1,5 +1,5 @@
 <body>
-    <div (keydown.ArrowLeft)="regar()" (keydown.ArrowUp)="regar()" (keydown.ArrowDown)="upColher()" (keydown.ArrowRight)="upJuros()" (keydown.space)="colher()">
+    <div id="fundo" (keydown.ArrowLeft)="regar()" (keydown.ArrowUp)="regar()" (keydown.ArrowDown)="upColher()" (keydown.ArrowRight)="upJuros()" (keydown.space)="colher()">
         <div class="alert alert-primary" role="alert">
             <button type="button" class="btn btn-primary" (click)="regar()"> Regar </button>
             <button type="button" class="btn btn-primary" (click)="colher()"> Colher </button>
@@ -7,18 +7,22 @@
             <button type="button" class="btn btn-primary" (click)="upJuros()"> Upgrade Juros </button>
         </div>
         <div class="alert alert-warning" style="display: inline-block" role="alert">
-            <p>Ganho por colheita: {{fator_colheita}}</p>
-            <p>Ganho por segundo: {{ganho_ps}}</p>
+            <p>Ganho por colheita: ${{fator_colheita.toFixed(2)}}</p>
+            <p>Ganho por segundo: ${{ganho_ps.toFixed(2)}}</p>
         </div>
         <div class="alert alert-warning" style="display: inline-block" role="alert">
-            <p>Upgrade da colheita: {{valor_upcolher}}</p>
-            <p>Upgrade do juros: {{valor_upjuros}}</p>
+            <p>Upgrade da colheita: ${{valor_upcolher.toFixed()}}</p>
+            <p>Upgrade do juros: ${{valor_upjuros.toFixed()}}</p>
         </div>
-        <div class="alert alert-success" style="display: inline-block" role="alert">
-            <p>Dinheiro: {{ dinheiro }}</p>
-        </div>  
-        <div>
+        <div class="alert alert-success" style="display: inline-block;" role="alert" >
+            <p>Dinheiro: $ {{ dinheiro.toFixed() }}</p>
+        </div> 
+        <br>
+        <br>
+        <div id="imageContainer" style="position: fixed; bottom:0;">
             <img src="/assets/img/{{estagio}}.png">
+        </div>
+        <div class="stripe" id="bottom">
         </div>
     </div>
 </body>

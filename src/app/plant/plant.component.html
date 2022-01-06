@@ -1,12 +1,24 @@
-<button type="button" class="btn btn-primary" (click)="regar()"> Regar </button>
-<button type="button" class="btn btn-primary" (click)="colher()"> Colher </button>
-<button type="button" class="btn btn-primary" (click)="upColher()"> Upgrade Colheita </button>
-<button type="button" class="btn btn-primary" (click)="upJuros()"> Upgrade Juros </button>
-<br>
-<br>
-<p>Dinheiro: {{ dinheiro }}</p>
-<p>Ganho por colheita: {{fator_colheita}}</p>
-<p>Ganho por segundo: {{ganho_ps}}</p>
-<p>Upgrade da colheita: {{valor_upcolher}}</p>
-<p>Upgrade do juros: {{valor_upjuros}}</p>
-<img src="/assets/img/{{estagio}}.png">
+<body>
+    <div (keydown.ArrowLeft)="regar()" (keydown.ArrowUp)="regar()" (keydown.ArrowDown)="upColher()" (keydown.ArrowRight)="upJuros()" (keydown.space)="colher()">
+        <div class="alert alert-primary" role="alert">
+            <button type="button" class="btn btn-primary" (click)="regar()"> Regar </button>
+            <button type="button" class="btn btn-primary" (click)="colher()"> Colher </button>
+            <button type="button" class="btn btn-primary" (click)="upColher()"> Upgrade Colheita </button>
+            <button type="button" class="btn btn-primary" (click)="upJuros()"> Upgrade Juros </button>
+        </div>
+        <div class="alert alert-warning" style="display: inline-block" role="alert">
+            <p>Ganho por colheita: {{fator_colheita}}</p>
+            <p>Ganho por segundo: {{ganho_ps}}</p>
+        </div>
+        <div class="alert alert-warning" style="display: inline-block" role="alert">
+            <p>Upgrade da colheita: {{valor_upcolher}}</p>
+            <p>Upgrade do juros: {{valor_upjuros}}</p>
+        </div>
+        <div class="alert alert-success" style="display: inline-block" role="alert">
+            <p>Dinheiro: {{ dinheiro }}</p>
+        </div>  
+        <div>
+            <img src="/assets/img/{{estagio}}.png">
+        </div>
+    </div>
+</body>

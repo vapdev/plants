@@ -9,7 +9,7 @@ import { interval } from 'rxjs';
 })
 export class PlantComponent implements OnInit {
 
-  dinheiro: number = 500;
+  dinheiro: number = 5000000000;
   estagio: number = 0;
   teste: number = 0;
   fator_colheita: number = 10;
@@ -51,7 +51,7 @@ export class PlantComponent implements OnInit {
   }
 
   upJuros(){
-    if (this.dinheiro > this.valor_upjuros && this.ms > 1){
+    if (this.dinheiro > this.valor_upjuros ){
       this.ms = this.ms/1.6;
       this.dinheiro -= this.valor_upjuros;
       this.valor_upjuros = this.valor_upjuros * 2,5;
